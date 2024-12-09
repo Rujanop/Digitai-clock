@@ -1,0 +1,116 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #001d93, #971b1b, #fdbb2d);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    overflow: hidden;
+    
+  }
+  
+    
+  
+  
+  h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px; /* เพิ่มระยะห่างระหว่างหัวข้อและวงกลม */
+    color: #ffffffdd;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    
+  
+  }
+  
+  /* Clock Container */
+  .clock-container {
+    text-align: center;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* เพิ่มระยะห่างระหว่างแต่ละวงกลม */
+  }
+  
+  /* Circle Animation Styles */
+  .circle {
+    position: relative;
+    width: 300px; /* เพิ่มขนาดวงกลม */
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .circle svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+  }
+  
+  .circle svg circle {
+    fill: none;
+    stroke-width: 10;
+    stroke: #ffffff20;
+    r: 100;
+    cx: 125;
+    cy: 150;
+  }
+  
+  .circle svg circle:nth-child(2) {
+    stroke: var(--color);
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+    
+    filter: drop-shadow(0 0 10px var(--color));
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+
+  }
+  
+  /* Time Text */
+  .time-text {
+    font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 1.0;
+    margin-top: 10px; /* ขยับข้อความใต้ตัวเลข */
+  }
+  
+  .circle p {
+    text-align: center;
+    font-size: 2.5rem; /* เพิ่มขนาดตัวเลข */
+    font-weight: bold;
+    margin: 0; /* เอาระยะขอบออก */
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+  }
+  
+  /* Animation */
+  @keyframes rotate {
+    0% { transform: rotate(0deg) translate(-50%, -50%); }
+    100% { transform: rotate(360deg) translate(-50%, -50%); }
+  }
+
+/* ตำแหน่งพระอาทิตย์และพระจันทร์ */
+.sun, .moon {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 100px;
+  transition: opacity 0.5s ease;
+}
+
+/* เริ่มต้นซ่อนทั้งสอง */
+#sun, #moon {
+  display: none;
+}
+
+  
